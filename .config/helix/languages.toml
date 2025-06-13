@@ -1,0 +1,19 @@
+[[language]]
+name = "python"
+formatter = { command = "ruff", args = ["format", "--line-length", "88", "-"] }
+auto-format = true
+
+[[language]]
+name = "c"
+language-servers = [ "clangd" ]
+indent = { tab-width = 2, unit = "  " }
+auto-format = true
+formatter = { command = "clang-format"}
+
+
+[[language]]
+name = "cpp"
+language-servers = [ "clangd" ]
+indent = { tab-width = 2, unit = "  " }
+auto-format = true
+formatter = { command = "clang-format"}

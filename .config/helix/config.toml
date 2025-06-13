@@ -1,0 +1,37 @@
+theme = "snazzy"
+
+[editor]
+line-number = "relative"
+true-color = true
+mouse = true
+bufferline = "multiple"
+continue-comments = false
+
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+snippets = true
+
+[editor.file-picker]
+hidden = false
+
+# Keymaps
+[keys.normal.'\']
+space = [''':pipe-to tmux load-buffer - \; paste-buffer -dpr -t '{right-of}' \; send-keys -t '{right-of}' Enter''']
+[keys.select.'\']
+space = [''':pipe-to tmux load-buffer - \; paste-buffer -dpr -t '{right-of}' \; send-keys -t '{right-of}' Enter''']
