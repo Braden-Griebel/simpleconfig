@@ -44,6 +44,16 @@ end
 test -r '/home/bgriebel/.opam/opam-init/init.fish' && source '/home/bgriebel/.opam/opam-init/init.fish' >/dev/null 2>/dev/null; or true
 # END opam configuration
 
+# Yazi setup
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
+
 # Abbreviations
 abbr --add xs 'xbps-query -Rs'
 abbr --add xr xbps-remove
