@@ -17,3 +17,7 @@ language-servers = [ "clangd" ]
 indent = { tab-width = 2, unit = "  " }
 auto-format = true
 formatter = { command = "clang-format"}
+
+[[language]]
+name = "json"
+language-servers = ["vscode-json-language-server"]

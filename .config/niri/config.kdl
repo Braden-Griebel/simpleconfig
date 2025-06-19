@@ -259,18 +259,25 @@ layout {
     }
 }
 
+// Put swaybg inside the overview backdrop.
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
-spawn-at-startup "mako"
-spawn-at-startup "nm-applet"
+spawn-at-startup "waybar" 
+spawn-at-startup "mako" 
+spawn-at-startup "nm-applet" 
 spawn-at-startup "blueman-applet"
-spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f"
-spawn-at-startup "bash" "swaybg -i $(find $HOME/Pictures/desktop-wallpapers/. -type f | shuf -n1) -m fill"
+spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f" 
+spawn-at-startup "swaybg"  "-i" "nasa-vltMzn0jqsA-unsplash.jpg" "-m" "fill" 
+
 
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -367,8 +374,8 @@ binds {
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
-    XF86AudioRaiseVolume allow-when-locked=true { spawn "amixer" "set" "Master" "10+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn "amixer" "set" "Master" "10%-"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "amixer" "set" r#""Master""# "10%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "amixer" "set" r#""Master""# "10%-"; }
     XF86AudioMute        allow-when-locked=true { spawn "amixer" "set" "Master" "toggle"; }
 
     // Example brightness key mappings for brightnessctl.
