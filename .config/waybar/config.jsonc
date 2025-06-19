@@ -77,6 +77,7 @@
     "format": "{text} ",
     "on-click": "pavucontrol",
     "exec": "amixer get Master | awk -F'[][]' 'END{ print $2 }'",
+    "interval": 2, 
   },
   "custom/media": {
     "format": "{icon} {text}",
