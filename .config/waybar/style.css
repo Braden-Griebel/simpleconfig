@@ -68,7 +68,6 @@ button:hover {
 #memory,
 #temperature,
 #network,
-#wireplumber,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -193,4 +192,9 @@ label:focus {
 
 #scratchpad.empty {
   background-color: transparent;
+}
+
+#custom-volume { 
+  background-color: @surface0;
+  color: @text;
 }

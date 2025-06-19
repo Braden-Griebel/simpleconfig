@@ -170,8 +170,14 @@ riverctl map normal Alt+Control Print spawn 'grim -g "$(slurp)" $HOME/Pictures/$
 swaybg -i $(find $HOME/Pictures/desktop-wallpapers/. -type f | shuf -n1) -m fill &
 
 
-## App Startup ##############
+## Configure Inputs ##########
+riverctl input pointer-1739-52559-SYNA328C:00_06CB:CD4F_Touchpad tap enabled
+setxkbmap caps:swapescape
+## App Startup ###############
 waybar &
+mako &
+nm-applet &
+blueman-applet &
 ##############################
 
 
