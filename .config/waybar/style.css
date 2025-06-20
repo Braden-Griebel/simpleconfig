@@ -8,7 +8,7 @@
 @import url("./themes/dracula.css");
 
 window#waybar {
-  background-color: rgba(43, 48, 59, 0.5);
+  background-color: @background-darker;
   border-bottom: 3px solid rgba(100, 114, 125, 0.5);
   color: #ffffff;
   transition-property: background-color;
@@ -18,15 +18,6 @@ window#waybar {
 window#waybar.hidden {
   opacity: 0.2;
 }
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
 
 window#waybar.termite {
   background-color: #3F3F3F;
@@ -49,11 +40,6 @@ button {
 button:hover {
   background: inherit;
   box-shadow: inset 0 -3px #ffffff;
-}
-
-/* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-  background-color: #a37800;
 }
 
 #workspaces button {
@@ -98,7 +84,7 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
   padding: 0 10px;
-  color: #ffffff;
+  color: @background;
 }
 
 #window,
@@ -117,18 +103,18 @@ button:hover {
 }
 
 #clock {
-  background-color: #64727D;
+  background-color: @purple;
 }
 
 #battery {
-  background-color: #ffffff;
+  background-color: @pink;
   color: #000000;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #ffffff;
-  background-color: #26A65B;
+  color: #000000;
+  background-color: @background;
 }
 
 @keyframes blink {
@@ -154,17 +140,17 @@ button:hover {
 }
 
 #power-profiles-daemon.performance {
-  background-color: #f53c3c;
+  background-color: @red;
   color: #ffffff;
 }
 
 #power-profiles-daemon.balanced {
-  background-color: #2980b9;
+  background-color: @purple;
   color: #ffffff;
 }
 
 #power-profiles-daemon.power-saver {
-  background-color: #2ecc71;
+  background-color: @green;
   color: #000000;
 }
 
@@ -173,12 +159,12 @@ label:focus {
 }
 
 #cpu {
-  background-color: #2ecc71;
+  background-color: @green;
   color: #000000;
 }
 
 #memory {
-  background-color: #9b59b6;
+  background-color: @red;
 }
 
 #disk {
@@ -190,7 +176,7 @@ label:focus {
 }
 
 #network {
-  background-color: #2980b9;
+  background-color: @cyan;
 }
 
 #network.disconnected {
@@ -198,7 +184,7 @@ label:focus {
 }
 
 #pulseaudio {
-  background-color: #f1c40f;
+  background-color: @yellow;
   color: #000000;
 }
 
@@ -239,7 +225,7 @@ label:focus {
 }
 
 #tray {
-  background-color: #2980b9;
+  background-color: @cyan;
 }
 
 #tray>.passive {
@@ -252,12 +238,17 @@ label:focus {
 }
 
 #idle_inhibitor {
-  background-color: #2d3436;
+  background-color: @background;
+}
+
+#idle_inhibitor.deactivated {
+  background-color: @background;
+  color: #ffffff;
 }
 
 #idle_inhibitor.activated {
-  background-color: #ecf0f1;
-  color: #2d3436;
+  background-color: @foreground;
+  color: #000000;
 }
 
 #mpd {

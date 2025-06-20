@@ -270,7 +270,8 @@ spawn-at-startup "mako"
 spawn-at-startup "nm-applet" 
 spawn-at-startup "blueman-applet"
 spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f" 
-spawn-at-startup "swaybg"  "-i" "/home/bgriebel/Pictures/desktop-wallpapers/nasa-vltMzn0jqsA-unsplash.jpg" "-m" "fill" 
+// spawn-at-startup "swaybg"  "-i" "/home/bgriebel/Pictures/desktop-wallpapers/nasa-vltMzn0jqsA-unsplash.jpg" "-m" "fill" 
+spawn-at-startup "bash" "-c" r#"swaybg -i $(find ~/Pictures/desktop-wallpapers/. -type f | shuf -n1) -m fill"#
 
 
 
@@ -362,11 +363,12 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+Shift+B hotkey-overlay-title="Open a web browser: Firefox" { spawn "firefox"; }
-
+    Mod+Shift+W hotkey-overlay-title="Open Gnome Web" { spawn "epiphany"; }
+    
     // You can also use a shell. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument in the end.
     // Mod+T { spawn "bash" "-c" "notify-send hello && exec alacritty"; }
-
+    
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
     XF86AudioRaiseVolume allow-when-locked=true { spawn "amixer" "set" r#""Master""# "10%+"; }

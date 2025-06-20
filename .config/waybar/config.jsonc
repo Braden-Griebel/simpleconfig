@@ -7,6 +7,7 @@
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
+    "custom/launcher",
     "niri/workspaces",
     "custom/media"
   ],
@@ -62,6 +63,10 @@
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
+  "custom/launcher": {
+    "format": "",
+    "on-click": "fuzzel"
+  },
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -79,6 +84,7 @@
   },
   "clock": {
     // "timezone": "America/New_York",
+    "format": "{:%a %b %e %Y %I:%M}",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
