@@ -54,6 +54,9 @@ function y
     rm -f -- "$tmp"
 end
 
+# Pixi completions
+pixi completion --shell fish | source
+
 # Abbreviations
 abbr --add xs 'xbps-query -Rs'
 abbr --add xr xbps-remove

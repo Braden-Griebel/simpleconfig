@@ -2,22 +2,140 @@
 name = "python"
 formatter = { command = "ruff", args = ["format", "--line-length", "88", "-"] }
 auto-format = true
+language-servers = ["pylsp", "ruff", "pyrefly"]
 
 [[language]]
 name = "c"
-language-servers = [ "clangd" ]
+language-servers = ["clangd"]
 indent = { tab-width = 2, unit = "  " }
 auto-format = true
-formatter = { command = "clang-format"}
+formatter = { command = "clang-format" }
 
 
 [[language]]
 name = "cpp"
-language-servers = [ "clangd" ]
+language-servers = ["clangd"]
 indent = { tab-width = 2, unit = "  " }
 auto-format = true
-formatter = { command = "clang-format"}
+formatter = { command = "clang-format" }
 
 [[language]]
 name = "json"
 language-servers = ["vscode-json-language-server"]
+
+
+[[language]]
+name = "fortran"
+formatter = { command = "fprettify", args = ["--stdout"] }
+auto-format = true
+
+[[language]]
+name = "ocaml"
+formatter = { command = "ocamlformat", args = ["-q", "--name=foo.ml", "-"] }
+auto-format = true
+
+[language-server.gopls.config]
+gofumpt = true
+
+[[language]]
+name = "awk"
+formatter = { command = "awk", timeout = 5, args = [
+  "--file=/dev/stdin",
+  "--pretty-print=/dev/stdout",
+] }
+
+[[language]]
+name = "json"
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "json"] }
+
+[[language]]
+name = "javascript"
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "js"] }
+auto-format = true
+
+[[language]]
+name = "typescript"
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "ts"] }
+auto-format = true
+
+[[language]]
+name = "jsx"
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "jsx"] }
+auto-format = true
+
+[[language]]
+name = "tsx"
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "tsx"] }
+auto-format = true
+
+[[language]]
+name = "markdown"
+formatter = { command = 'deno', args = ["fmt", "-", "--ext", "md"] }
+auto-format = true
+
+[[language]]
+name = "toml"
+formatter = { command = "taplo", args = ["format", "-"] }
+auto-format = true
+
+[[language]]
+name = "lua"
+formatter = { command = "stylua", args = ["-"] }
+
+
+[[language]]
+name = "javascript"
+shebangs = ["deno"]
+roots = ["deno.json", "deno.jsonc"]
+file-types = ["js"]
+language-servers = ["deno-lsp"]
+auto-format = true
+[[language]]
+name = "typescript"
+shebangs = ["deno"]
+roots = ["deno.json", "deno.jsonc"]
+file-types = ["ts"]
+language-servers = ["deno-lsp"]
+auto-format = true
+[[language]]
+name = "jsx"
+shebangs = ["deno"]
+roots = ["deno.json", "deno.jsonc"]
+file-types = ["jsx"]
+language-servers = ["deno-lsp"]
+auto-format = true
+[[language]]
+name = "tsx"
+shebangs = ["deno"]
+roots = ["deno.json", "deno.jsonc"]
+file-types = ["tsx"]
+language-servers = ["deno-lsp"]
+auto-format = true
+
+
+[language-server.deno-lsp]
+command = "deno"
+args = ["lsp"]
+environment = { NO_COLOR = "1" }
+
+[language-server.deno-lsp.config.deno]
+enable = true
+## Uncomment to enable completion of unstable features of Deno
+## unstable = true
+## Uncomment to cache dependencies on save
+## cacheOnSave = true
+## Enable completion of importing from registries
+## Enable completion of function calls
+suggest = { completeFunctionCalls = false, imports = { hosts = { "https://deno.land" = true } } }
+## suggest = { imports = { hosts = { "https://deno.land" = true, "https://crux.land" = true, "https://x.nest.land" = true } } }
+## Uncomment to enable inlay hints
+## inlayHints.parameterNames.enabled = "all"
+## inlayHints.parameterTypes.enabled = true
+## inlayHints.variableTypes.enabled = true
+## inlayHints.propertyDeclarationTypes.enabled  = true
+## inlayHints.functionLikeReturnTypes.enabled = true
+## inlayHints.enumMemberValues.enabled = true
+
+[language-server.pyrefly]
+command = "pyrefly"
+args = ["lsp"]
