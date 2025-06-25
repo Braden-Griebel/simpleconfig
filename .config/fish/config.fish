@@ -62,6 +62,7 @@ abbr --add xs 'xbps-query -Rs'
 abbr --add xr xbps-remove
 abbr --add cv csvlens
 abbr --add zb 'zig build'
+abbr --add zt 'zig build test'
 abbr --add vv 'source ./.venv/bin/activate.fish'
 
 # Zoxide Setup (Kepp at end)
