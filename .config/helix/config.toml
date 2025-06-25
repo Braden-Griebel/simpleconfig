@@ -16,7 +16,14 @@ select = "underline"
 [editor.statusline]
 left = ["mode", "spinner"]
 center = ["file-name"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
 separator = "│"
 mode.normal = "NORMAL"
 mode.insert = "INSERT"
@@ -32,6 +39,10 @@ hidden = false
 
 # Keymaps
 [keys.normal.'\']
-space = [''':pipe-to tmux load-buffer - \; paste-buffer -dpr -t '{right-of}' \; send-keys -t '{right-of}' Enter''']
+space = [
+  ''':pipe-to tmux load-buffer - \; paste-buffer -dpr -t '{right-of}' \; send-keys -t '{right-of}' Enter''',
+]
 [keys.select.'\']
-space = [''':pipe-to tmux load-buffer - \; paste-buffer -dpr -t '{right-of}' \; send-keys -t '{right-of}' Enter''']
+space = [
+  ''':pipe-to tmux load-buffer - \; paste-buffer -dpr -t '{right-of}' \; send-keys -t '{right-of}' Enter''',
+]

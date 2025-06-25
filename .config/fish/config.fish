@@ -61,6 +61,8 @@ pixi completion --shell fish | source
 abbr --add xs 'xbps-query -Rs'
 abbr --add xr xbps-remove
 abbr --add cv csvlens
+abbr --add zb 'zig build'
+abbr --add vv 'source ./.venv/bin/activate.fish'
 
 # Zoxide Setup (Kepp at end)
 zoxide init --cmd cd fish | source
