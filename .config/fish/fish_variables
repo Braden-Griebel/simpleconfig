@@ -45,4 +45,4 @@ SETUVAR fish_pager_color_selected_background:\x2d\x2dbackground\x3d44475a
 SETUVAR fish_pager_color_selected_completion:f8f8f2
 SETUVAR fish_pager_color_selected_description:6272a4
 SETUVAR fish_pager_color_selected_prefix:8be9fd
-SETUVAR fish_user_paths:/home/bgriebel/miniforge3/condabin\x1e/home/bgriebel/\x2enimble/bin\x1e/home/bgriebel/Programs/jdtls/bin\x1e/home/bgriebel/\x2epixi/bin\x1e/home/bgriebel/Programs/zls/zig\x2dout/bin\x1e/home/bgriebel/Programs/zig\x2dmaster\x1e/home/bgriebel/go/bin
+SETUVAR fish_user_paths:/home/bgriebel/miniforge3/condabin\x1e/home/bgriebel/Programs/zig\x2dmaster\x1e/home/bgriebel/\x2enimble/bin\x1e/home/bgriebel/Programs/jdtls/bin\x1e/home/bgriebel/\x2epixi/bin\x1e/home/bgriebel/Programs/zls/zig\x2dout/bin\x1e/home/bgriebel/go/bin
