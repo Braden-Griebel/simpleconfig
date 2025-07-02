@@ -38,22 +38,49 @@ This function should only modify configuration layer settings."
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ;; auto-completion
+     auto-completion
      ;; better-defaults
+     csv
+     dap
      emacs-lisp
-     ;; git
+     git
      helm
-     ;; lsp
-     ;; markdown
+     (json :variables
+           json-fmt-tool 'prettier
+           json-fmt-on-save t
+           json-backend 'lsp)
+     (lsp :variables lsp-lens-enable t)
+     ( markdown :variables markdown-live-preview-engine 'vmd )
      multiple-cursors
      ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     prettier
+     (python :variables
+             python-backend 'lsp
+             python-lsp-server 'pylsp
+             python-test-runner 'pytest
+             python-formatter 'ruff
+             python-format-on-save t
+             python-virtualenv-management 'pet)
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom
+            shell-default-shell 'vterm
+            shell-default-term-shell "/bin/fish")
+     (shell-scripts :variables
+                    shell-scripts-format-on-save t
+                    shell-scipts-backend nil)
      ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
-     treemacs)
+     syntax-checking
+     version-control
+     toml
+     treemacs
+     yaml
+     (zig :variables
+          zls-backend 'lsp
+          lsp-zig-zls-executable "/home/bgriebel/Programs/zls/zig-out/bin/zls"
+          lsp-zig-zig-exe-path "/home/bgriebel/Programs/zig-master/zig"
+          lsp-zig-zig-lib-path "/home/bgriebel/Programs/zig-master/lib/zig.h")
+     )
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -230,7 +257,7 @@ It should only modify the values of Spacemacs settings."
    ;; fixed-pitch faces. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
-   dotspacemacs-default-font '("Source Code Pro"
+   dotspacemacs-default-font '("FiraCode Nerd Font Mono"
                                :size 10.0
                                :weight normal
                                :width normal)
@@ -582,31 +609,44 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(package-selected-packages
-     '(ace-link aggressive-indent all-the-icons auto-compile auto-highlight-symbol
-                avy-jump-helm-line centered-cursor-mode clean-aindent-mode
-                column-enforce-mode define-word devdocs diminish dired-quick-sort
-                disable-mouse dotenv-mode drag-stuff dumb-jump elisp-def
-                elisp-demos elisp-slime-nav emr eval-sexp-fu evil-anzu evil-args
-                evil-cleverparens evil-collection evil-easymotion evil-escape
-                evil-evilified-state evil-exchange evil-goggles evil-iedit-state
-                evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
-                evil-nerd-commenter evil-numbers evil-surround evil-textobj-line
-                evil-tutor evil-unimpaired evil-visual-mark-mode evil-visualstar
-                expand-region eyebrowse fancy-battery golden-ratio
-                google-translate helm-ag helm-comint helm-descbinds helm-make
-                helm-mode-manager helm-org helm-projectile helm-purpose helm-swoop
-                helm-themes helm-xref hide-comnt highlight-indentation
-                highlight-numbers highlight-parentheses hl-todo holy-mode
-                hungry-delete hybrid-mode indent-guide info+ inspector link-hint
-                lorem-ipsum macrostep multi-line nameless open-junk-file
-                org-superstar overseer page-break-lines paradox password-generator
-                pcre2el popwin quickrun rainbow-delimiters restart-emacs space-doc
-                spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
-                string-edit-at-point string-inflection symbol-overlay symon
-                term-cursor toc-org treemacs-evil treemacs-icons-dired
-                treemacs-persp treemacs-projectile undo-fu undo-fu-session uuidgen
-                vi-tilde-fringe volatile-highlights vundo wgrep winum
-                writeroom-mode ws-butler)))
+     '(a ace-link aggressive-indent all-the-icons auto-compile auto-highlight-symbol
+         auto-yasnippet avy-jump-helm-line browse-at-remote bui
+         centered-cursor-mode clean-aindent-mode closql code-cells code-review
+         column-enforce-mode company company-shell csv-mode cython-mode dap-mode
+         deferred define-word devdocs diff-hl diminish dired-quick-sort
+         disable-mouse dotenv-mode drag-stuff dumb-jump eat edit-indirect
+         elisp-def elisp-demos elisp-slime-nav emacsql emojify emr esh-help
+         eshell-prompt-extras eshell-z eval-sexp-fu evil-anzu evil-args
+         evil-cleverparens evil-collection evil-easymotion evil-escape
+         evil-evilified-state evil-exchange evil-goggles evil-iedit-state
+         evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
+         evil-nerd-commenter evil-numbers evil-surround evil-textobj-line
+         evil-tutor evil-unimpaired evil-visual-mark-mode evil-visualstar
+         expand-region eyebrowse fancy-battery fish-mode flycheck flycheck-bashate
+         flycheck-elsa flycheck-package flycheck-pos-tip forge gh-md ghub git-link
+         git-messenger git-modes git-timemachine gitignore-templates golden-ratio
+         google-translate helm-ag helm-c-yasnippet helm-comint helm-company
+         helm-descbinds helm-git-grep helm-ls-git helm-lsp helm-make
+         helm-mode-manager helm-org helm-projectile helm-purpose helm-pydoc
+         helm-swoop helm-themes helm-xref hide-comnt highlight-indentation
+         highlight-numbers highlight-parentheses hl-todo holy-mode hungry-delete
+         hybrid-mode indent-guide info+ insert-shebang inspector json-mode
+         json-navigator json-reformat json-snatcher link-hint live-py-mode llama
+         load-env-vars lorem-ipsum lsp-docker lsp-mode lsp-origami lsp-treemacs
+         lsp-ui macrostep magit magit-section markdown-mode markdown-toc
+         multi-line multi-term multi-vterm nameless open-junk-file org-superstar
+         origami overseer package-lint page-break-lines paradox password-generator
+         pcre2el pet pip-requirements pipenv pippel poetry popwin pos-tip
+         prettier-js py-isort pydoc pyenv-mode pylookup pytest pythonic pyvenv
+         quickrun rainbow-delimiters restart-emacs ruff-format shell-pop shfmt
+         smeargle space-doc spaceline spacemacs-purpose-popwin
+         spacemacs-whitespace-cleanup sphinx-doc string-edit-at-point
+         string-inflection symbol-overlay symon term-cursor terminal-here toc-org
+         transient treemacs-evil treemacs-icons-dired treemacs-magit
+         treemacs-persp treemacs-projectile treepy undo-fu undo-fu-session uuidgen
+         vi-tilde-fringe vmd-mode volatile-highlights vterm vundo web-beautify
+         wgrep winum with-editor writeroom-mode ws-butler yaml yaml-mode yasnippet
+         yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
