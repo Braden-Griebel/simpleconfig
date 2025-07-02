@@ -51,8 +51,6 @@ This function should only modify configuration layer settings."
            json-backend 'lsp)
      (lsp :variables lsp-lens-enable t)
      ( markdown :variables markdown-live-preview-engine 'vmd )
-     multiple-cursors
-     ;; org
      prettier
      (python :variables
              python-backend 'lsp
@@ -61,6 +59,10 @@ This function should only modify configuration layer settings."
              python-formatter 'ruff
              python-format-on-save t
              python-virtualenv-management 'pet)
+     (ess :variables
+          ess-r-backend 'lsp
+          ess-assign-key "\M--"
+          ess-pipe-key "\C-\S-m")
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
