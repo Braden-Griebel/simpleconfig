@@ -40,17 +40,32 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      auto-completion
      ;; better-defaults
+     (c-c++ :variables
+            c-c++-adopt-subprojects t
+            c-c++-backend 'lsp-ccls
+            c-c++-dap-adapters 'dap-lldb
+            c-c++-enable-clang-format-on-save t)
+     (cmake :variables
+            cmake-backend 'lsp
+            cmake-enable-ide-support t)
      csv
      dap
      emacs-lisp
      git
+     (go :variables
+         go-backend 'lsp
+         go-format-before-save t
+         go-use-golangci-lint t)
      helm
      (json :variables
            json-fmt-tool 'prettier
            json-fmt-on-save t
            json-backend 'lsp)
      (lsp :variables lsp-lens-enable t)
-     ( markdown :variables markdown-live-preview-engine 'vmd )
+     (markdown :variables markdown-live-preview-engine 'vmd)
+     meson
+     (ocaml :variables
+            ocaml-format-on-save t)
      prettier
      (python :variables
              python-backend 'lsp
@@ -61,8 +76,10 @@ This function should only modify configuration layer settings."
              python-virtualenv-management 'pet)
      (ess :variables
           ess-r-backend 'lsp
-          ess-assign-key "\M--"
-          ess-pipe-key "\C-\S-m")
+          ess-assign-key "\M--")
+     (rust :variables
+           rustic-format-on-save t
+           lsp-rust-analyzer-cargo-auto-reload t)
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
@@ -81,7 +98,7 @@ This function should only modify configuration layer settings."
           zls-backend 'lsp
           lsp-zig-zls-executable "/home/bgriebel/Programs/zls/zig-out/bin/zls"
           lsp-zig-zig-exe-path "/home/bgriebel/Programs/zig-master/zig"
-          lsp-zig-zig-lib-path "/home/bgriebel/Programs/zig-master/lib/zig.h")
+          lsp-zig-zig-lib-path "/home/bgriebel/Programs/zig-master/lib")
      )
 
 
@@ -99,7 +116,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(flycheck-ocaml)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -176,7 +193,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner 4
 
    ;; Scale factor controls the scaling (size) of the startup banner. Default
    ;; value is `auto' for scaling the logo automatically to fit all buffer
@@ -210,7 +227,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil, show file icons for entries and headings on Spacemacs home buffer.
    ;; This has no effect in terminal or if "nerd-icons" package or the font
    ;; is not installed. (default nil)
-   dotspacemacs-startup-buffer-show-icons nil
+   dotspacemacs-startup-buffer-show-icons t
 
    ;; Default major mode for a new empty buffer. Possible values are mode
    ;; names such as `text-mode'; and `nil' to use Fundamental mode.
@@ -248,7 +265,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(all-the-icons :separator wave :separator-scale 1.5)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -259,8 +276,8 @@ It should only modify the values of Spacemacs settings."
    ;; fixed-pitch faces. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
-   dotspacemacs-default-font '("FiraCode Nerd Font Mono"
-                               :size 10.0
+   dotspacemacs-default-font '("FiraCode Nerd Font"
+                               :size 14.0
                                :weight normal
                                :width normal)
 
@@ -610,14 +627,18 @@ This function is called at the very end of Spacemacs initialization."
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
+   '(custom-safe-themes
+     '("01f347a923dd21661412d4c5a7c7655bf17fb311b57ddbdbd6fce87bd7e58de6"
+       "73434a894b58d29665b2b16fd1c2845883001a79e05ccb72318dfe4bdaf39191" default))
    '(package-selected-packages
      '(a ace-link aggressive-indent all-the-icons auto-compile auto-highlight-symbol
-         auto-yasnippet avy-jump-helm-line browse-at-remote bui
-         centered-cursor-mode clean-aindent-mode closql code-cells code-review
-         column-enforce-mode company company-shell csv-mode cython-mode dap-mode
-         deferred define-word devdocs diff-hl diminish dired-quick-sort
-         disable-mouse dotenv-mode drag-stuff dumb-jump eat edit-indirect
-         elisp-def elisp-demos elisp-slime-nav emacsql emojify emr esh-help
+         auto-yasnippet avy-jump-helm-line browse-at-remote bui caml ccls
+         centered-cursor-mode clean-aindent-mode closql cmake-mode code-cells
+         code-review column-enforce-mode company company-c-headers company-shell
+         cpp-auto-include csv-mode cython-mode dap-mode deferred define-word
+         devdocs diff-hl diminish dired-quick-sort disable-mouse disaster
+         dotenv-mode drag-stuff dumb-jump dune eat edit-indirect elisp-def
+         elisp-demos elisp-slime-nav emacsql emojify emr esh-help
          eshell-prompt-extras eshell-z eval-sexp-fu evil-anzu evil-args
          evil-cleverparens evil-collection evil-easymotion evil-escape
          evil-evilified-state evil-exchange evil-goggles evil-iedit-state
@@ -625,30 +646,33 @@ This function is called at the very end of Spacemacs initialization."
          evil-nerd-commenter evil-numbers evil-surround evil-textobj-line
          evil-tutor evil-unimpaired evil-visual-mark-mode evil-visualstar
          expand-region eyebrowse fancy-battery fish-mode flycheck flycheck-bashate
-         flycheck-elsa flycheck-package flycheck-pos-tip forge gh-md ghub git-link
-         git-messenger git-modes git-timemachine gitignore-templates golden-ratio
+         flycheck-elsa flycheck-golangci-lint flycheck-package flycheck-pos-tip
+         forge gendoxy gh-md ghub git-link git-messenger git-modes git-timemachine
+         gitignore-templates go-eldoc go-fill-struct go-gen-test go-guru go-impl
+         go-mode go-rename go-tag godoctor golden-ratio google-c-style
          google-translate helm-ag helm-c-yasnippet helm-comint helm-company
-         helm-descbinds helm-git-grep helm-ls-git helm-lsp helm-make
+         helm-ctest helm-descbinds helm-git-grep helm-ls-git helm-lsp helm-make
          helm-mode-manager helm-org helm-projectile helm-purpose helm-pydoc
          helm-swoop helm-themes helm-xref hide-comnt highlight-indentation
          highlight-numbers highlight-parentheses hl-todo holy-mode hungry-delete
          hybrid-mode indent-guide info+ insert-shebang inspector json-mode
          json-navigator json-reformat json-snatcher link-hint live-py-mode llama
          load-env-vars lorem-ipsum lsp-docker lsp-mode lsp-origami lsp-treemacs
-         lsp-ui macrostep magit magit-section markdown-mode markdown-toc
-         multi-line multi-term multi-vterm nameless open-junk-file org-superstar
+         lsp-ui macrostep magit magit-section markdown-mode markdown-toc merlin
+         merlin-company merlin-eldoc merlin-iedit meson-mode multi-line multi-term
+         multi-vterm nameless ocamlformat ocp-indent open-junk-file org-superstar
          origami overseer package-lint page-break-lines paradox password-generator
          pcre2el pet pip-requirements pipenv pippel poetry popwin pos-tip
          prettier-js py-isort pydoc pyenv-mode pylookup pytest pythonic pyvenv
-         quickrun rainbow-delimiters restart-emacs ruff-format shell-pop shfmt
-         smeargle space-doc spaceline spacemacs-purpose-popwin
-         spacemacs-whitespace-cleanup sphinx-doc string-edit-at-point
-         string-inflection symbol-overlay symon term-cursor terminal-here toc-org
-         transient treemacs-evil treemacs-icons-dired treemacs-magit
-         treemacs-persp treemacs-projectile treepy undo-fu undo-fu-session uuidgen
-         vi-tilde-fringe vmd-mode volatile-highlights vterm vundo web-beautify
-         wgrep winum with-editor writeroom-mode ws-butler yaml yaml-mode yasnippet
-         yasnippet-snippets)))
+         quickrun rainbow-delimiters restart-emacs ron-mode ruff-format rust-mode
+         rustic shell-pop shfmt smeargle space-doc spaceline
+         spacemacs-purpose-popwin spacemacs-whitespace-cleanup sphinx-doc
+         string-edit-at-point string-inflection symbol-overlay symon term-cursor
+         terminal-here toc-org transient treemacs-evil treemacs-icons-dired
+         treemacs-magit treemacs-persp treemacs-projectile treepy tuareg undo-fu
+         undo-fu-session utop uuidgen vi-tilde-fringe vmd-mode volatile-highlights
+         vterm vundo web-beautify wgrep winum with-editor writeroom-mode ws-butler
+         xterm-color yaml yaml-mode yasnippet yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.

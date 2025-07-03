@@ -1,11 +1,9 @@
 [general]
-import=[
-  "themes/dracula.toml"
-]
+import = ["themes/dracula.toml"]
 
 [font]
-normal={family="FiraCode Nerd Font Mono",style="Regular"}
-size=14
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+size = 14
 
 [terminal]
-shell="/bin/fish"
+shell = "/bin/fish"
