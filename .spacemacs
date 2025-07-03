@@ -57,6 +57,8 @@ This function should only modify configuration layer settings."
          go-format-before-save t
          go-use-golangci-lint t)
      helm
+     (java :variables
+           java-backend 'lsp)
      (json :variables
            json-fmt-tool 'prettier
            json-fmt-on-save t
@@ -650,22 +652,23 @@ This function is called at the very end of Spacemacs initialization."
          forge gendoxy gh-md ghub git-link git-messenger git-modes git-timemachine
          gitignore-templates go-eldoc go-fill-struct go-gen-test go-guru go-impl
          go-mode go-rename go-tag godoctor golden-ratio google-c-style
-         google-translate helm-ag helm-c-yasnippet helm-comint helm-company
-         helm-ctest helm-descbinds helm-git-grep helm-ls-git helm-lsp helm-make
-         helm-mode-manager helm-org helm-projectile helm-purpose helm-pydoc
-         helm-swoop helm-themes helm-xref hide-comnt highlight-indentation
-         highlight-numbers highlight-parentheses hl-todo holy-mode hungry-delete
-         hybrid-mode indent-guide info+ insert-shebang inspector json-mode
-         json-navigator json-reformat json-snatcher link-hint live-py-mode llama
-         load-env-vars lorem-ipsum lsp-docker lsp-mode lsp-origami lsp-treemacs
-         lsp-ui macrostep magit magit-section markdown-mode markdown-toc merlin
-         merlin-company merlin-eldoc merlin-iedit meson-mode multi-line multi-term
-         multi-vterm nameless ocamlformat ocp-indent open-junk-file org-superstar
-         origami overseer package-lint page-break-lines paradox password-generator
+         google-translate groovy-imports groovy-mode helm-ag helm-c-yasnippet
+         helm-comint helm-company helm-ctest helm-descbinds helm-git-grep
+         helm-ls-git helm-lsp helm-make helm-mode-manager helm-org helm-projectile
+         helm-purpose helm-pydoc helm-swoop helm-themes helm-xref hide-comnt
+         highlight-indentation highlight-numbers highlight-parentheses hl-todo
+         holy-mode hungry-delete hybrid-mode indent-guide info+ insert-shebang
+         inspector json-mode json-navigator json-reformat json-snatcher link-hint
+         live-py-mode llama load-env-vars lorem-ipsum lsp-docker lsp-java lsp-mode
+         lsp-origami lsp-treemacs lsp-ui macrostep magit magit-section
+         markdown-mode markdown-toc maven-test-mode merlin merlin-company
+         merlin-eldoc merlin-iedit meson-mode multi-line multi-term multi-vterm
+         mvn nameless ocamlformat ocp-indent open-junk-file org-superstar origami
+         overseer package-lint page-break-lines paradox password-generator pcache
          pcre2el pet pip-requirements pipenv pippel poetry popwin pos-tip
          prettier-js py-isort pydoc pyenv-mode pylookup pytest pythonic pyvenv
-         quickrun rainbow-delimiters restart-emacs ron-mode ruff-format rust-mode
-         rustic shell-pop shfmt smeargle space-doc spaceline
+         quickrun rainbow-delimiters request restart-emacs ron-mode ruff-format
+         rust-mode rustic shell-pop shfmt smeargle space-doc spaceline
          spacemacs-purpose-popwin spacemacs-whitespace-cleanup sphinx-doc
          string-edit-at-point string-inflection symbol-overlay symon term-cursor
          terminal-here toc-org transient treemacs-evil treemacs-icons-dired
