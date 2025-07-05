@@ -88,7 +88,7 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
-            shell-default-shell 'term
+            shell-default-shell 'ansi-term
             shell-default-term-shell "/bin/fish")
      (shell-scripts :variables
                     shell-scripts-format-on-save t
