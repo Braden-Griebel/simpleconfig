@@ -57,6 +57,16 @@ end
 # Pixi completions
 pixi completion --shell fish | source
 
+# emacs ansi-term support
+if test -n "$EMACS"
+    set -x TERM eterm-color
+end
+
+# this function may be required
+function fish_title
+    true
+end
+
 # Abbreviations
 abbr --add xs 'xbps-query -Rs'
 abbr --add xr xbps-remove
