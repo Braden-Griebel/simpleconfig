@@ -63,6 +63,9 @@ This function should only modify configuration layer settings."
            json-fmt-tool 'prettier
            json-fmt-on-save t
            json-backend 'lsp)
+     (kotlin :variables
+             kotlin-backend 'lsp
+             kotlin-lsp-jar-path "/home/bgriebel/Programs/kotlin-language-server/server/build/install/server/bin/kotlin-language-server")
      (lsp :variables lsp-lens-enable t)
      (markdown :variables markdown-live-preview-engine 'vmd)
      meson
