@@ -65,7 +65,7 @@ This function should only modify configuration layer settings."
            json-backend 'lsp)
      (kotlin :variables
              kotlin-backend 'lsp
-             kotlin-lsp-jar-path "/home/bgriebel/Programs/kotlin-language-server/server/build/install/server/bin/kotlin-language-server")
+             kotlin-lsp-jar-path "/usr/bin/kotlin-language-server")
      (lsp :variables lsp-lens-enable t)
      (markdown :variables markdown-live-preview-engine 'vmd)
      meson
@@ -88,11 +88,11 @@ This function should only modify configuration layer settings."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom
-            shell-default-shell 'vterm
+            shell-default-shell 'term
             shell-default-term-shell "/bin/fish")
      (shell-scripts :variables
                     shell-scripts-format-on-save t
-                    shell-scipts-backend nil)
+                    shell-scripts-backend nil)
      ;; spell-checking
      syntax-checking
      version-control
@@ -101,9 +101,9 @@ This function should only modify configuration layer settings."
      yaml
      (zig :variables
           zls-backend 'lsp
-          lsp-zig-zls-executable "/home/bgriebel/Programs/zls/zig-out/bin/zls"
-          lsp-zig-zig-exe-path "/home/bgriebel/Programs/zig-master/zig"
-          lsp-zig-zig-lib-path "/home/bgriebel/Programs/zig-master/lib")
+          lsp-zig-zls-executable "/usr/bin/zls"
+          lsp-zig-zig-exe-path "/usr/bin/zig"
+          lsp-zig-zig-lib-path "/usr/lib/zig")
      )
 
 
