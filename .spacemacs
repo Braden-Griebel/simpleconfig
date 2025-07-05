@@ -664,7 +664,7 @@ This function is called at the very end of Spacemacs initialization."
          inspector json-mode json-navigator json-reformat json-snatcher link-hint
          live-py-mode llama load-env-vars lorem-ipsum lsp-docker lsp-java lsp-mode
          lsp-origami lsp-treemacs lsp-ui macrostep magit magit-section
-         markdown-mode markdown-toc maven-test-mode merlin merlin-company
+         markdown-mode markdown-toc maven-test-mode memoize merlin merlin-company
          merlin-eldoc merlin-iedit meson-mode multi-line multi-term multi-vterm
          mvn nameless ocamlformat ocp-indent open-junk-file org-superstar origami
          overseer package-lint page-break-lines paradox password-generator pcache
@@ -672,13 +672,14 @@ This function is called at the very end of Spacemacs initialization."
          prettier-js py-isort pydoc pyenv-mode pylookup pytest pythonic pyvenv
          quickrun rainbow-delimiters request restart-emacs ron-mode ruff-format
          rust-mode rustic shell-pop shfmt smeargle space-doc spaceline
-         spacemacs-purpose-popwin spacemacs-whitespace-cleanup sphinx-doc
-         string-edit-at-point string-inflection symbol-overlay symon term-cursor
-         terminal-here toc-org transient treemacs-evil treemacs-icons-dired
-         treemacs-magit treemacs-persp treemacs-projectile treepy tuareg undo-fu
-         undo-fu-session utop uuidgen vi-tilde-fringe vmd-mode volatile-highlights
-         vterm vundo web-beautify wgrep winum with-editor writeroom-mode ws-butler
-         xterm-color yaml yaml-mode yasnippet yasnippet-snippets)))
+         spaceline-all-the-icons spacemacs-purpose-popwin
+         spacemacs-whitespace-cleanup sphinx-doc string-edit-at-point
+         string-inflection symbol-overlay symon term-cursor terminal-here toc-org
+         transient treemacs-evil treemacs-icons-dired treemacs-magit
+         treemacs-persp treemacs-projectile treepy tuareg undo-fu undo-fu-session
+         utop uuidgen vi-tilde-fringe vmd-mode volatile-highlights vterm vundo
+         web-beautify wgrep winum with-editor writeroom-mode ws-butler xterm-color
+         yaml yaml-mode yasnippet yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.

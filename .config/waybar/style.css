@@ -225,6 +225,7 @@ label:focus {
 }
 
 #tray {
+  color: @background;
   background-color: @cyan;
 }
 

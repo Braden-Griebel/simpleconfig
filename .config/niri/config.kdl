@@ -270,7 +270,6 @@ spawn-at-startup "mako"
 spawn-at-startup "nm-applet" 
 spawn-at-startup "blueman-applet"
 spawn-at-startup "swayidle" "-w" "timeout" "601" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f" 
-// spawn-at-startup "swaybg"  "-i" "/home/bgriebel/Pictures/desktop-wallpapers/nasa-vltMzn0jqsA-unsplash.jpg" "-m" "fill" 
 spawn-at-startup "bash" "-c" r#"swaybg -i $(find ~/Pictures/desktop-wallpapers/. -type f | shuf -n1) -m fill"#
 // Start xsattelite
 spawn-at-startup "xwayland-satellite"

@@ -65,6 +65,7 @@ abbr --add zb 'zig build'
 abbr --add zt 'zig build test'
 abbr --add vv 'source ./.venv/bin/activate.fish'
 abbr --add em 'emacs -nw'
+abbr --add hx helix
 
 # Zoxide Setup (Kepp at end)
 zoxide init --cmd cd fish | source
