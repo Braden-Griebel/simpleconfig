@@ -67,7 +67,7 @@ This function should only modify configuration layer settings."
              kotlin-backend 'lsp
              kotlin-lsp-jar-path "/usr/bin/kotlin-language-server")
      (lsp :variables lsp-lens-enable t)
-     (markdown :variables markdown-live-preview-engine 'vmd)
+     (markdown :variables markdown-live-preview-engine 'pandoc)
      meson
      (ocaml :variables
             ocaml-format-on-save t)
@@ -79,9 +79,9 @@ This function should only modify configuration layer settings."
              python-formatter 'ruff
              python-format-on-save t
              python-virtualenv-management 'pet)
-     (ess :variables
-          ess-r-backend 'lsp
-          ess-assign-key "\M--")
+     ;; (ess :variables
+     ;;      ess-r-backend 'lsp
+     ;;      ess-assign-key "\M--")
      (rust :variables
            rustic-format-on-save t
            lsp-rust-analyzer-cargo-auto-reload t)
@@ -617,7 +617,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-(add-hook 'term-mode-hook 'spacemacs/toggle-truncate-lines-on)
+  (add-hook 'term-mode-hook 'spacemacs/toggle-truncate-lines-on)
 
   )
 
