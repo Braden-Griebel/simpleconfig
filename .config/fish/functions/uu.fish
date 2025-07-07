@@ -14,5 +14,5 @@ function uu
     opam upgrade
 
     # Perform system update
-    sudo xbps-install -Su
+    sudo yay -Syu
 end
