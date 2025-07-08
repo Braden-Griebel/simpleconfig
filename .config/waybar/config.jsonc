@@ -64,7 +64,7 @@
     "tooltip-format-disconnected": "MPD (disconnected)"
   },
   "custom/launcher": {
-    "format": "",
+    "format": "󰣇",
     "on-click": "fuzzel"
   },
   "idle_inhibitor": {
