@@ -5,8 +5,6 @@ function uu
     opam update
     uv self update
     uv tool update --all
-    mamba update --all
-    mamba deactivate
     gup update # update tools installed with go 
     cargo install-update -a # Update tools installed with cargo
 
