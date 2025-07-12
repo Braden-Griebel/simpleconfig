@@ -68,11 +68,10 @@ function fish_title
 end
 
 # Abbreviations
-abbr --add xs 'xbps-query -Rs'
-abbr --add xr xbps-remove
 abbr --add cv csvlens
 abbr --add zb 'zig build'
-abbr --add zt 'zig build test'
+abbr --add zt 'zig build test --summary all'
+abbr --add zd "zig build debug"
 abbr --add vv 'source ./.venv/bin/activate.fish'
 abbr --add em 'emacs -nw'
 abbr --add hx helix
