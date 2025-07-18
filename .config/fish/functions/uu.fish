@@ -12,5 +12,5 @@ function uu
     opam upgrade
 
     # Perform system update
-    sudo yay -Syu
+    yay -Syu
 end
