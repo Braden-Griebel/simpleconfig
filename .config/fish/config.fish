@@ -62,10 +62,13 @@ if test -n "$EMACS"
     set -x TERM eterm-color
 end
 
-# this function may be required
 function fish_title
     true
 end
+
+# Set some preferences 
+set -x EDITOR nvim
+set -x PAGER less
 
 # Abbreviations
 abbr --add cv csvlens
