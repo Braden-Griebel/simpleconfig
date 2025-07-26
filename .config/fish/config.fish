@@ -75,7 +75,7 @@ abbr --add cv csvlens
 abbr --add cb 'cmake -G "Ninja" -B build -S .'
 abbr --add cbt 'cmake -G "Ninja" -B build -S . -DBUILD_TESTING=ON'
 abbr --add cbb 'cmake --build ./build'
-abbr --add ct 'cd build && ctest --rerun-failed --output-on-failure && cd ..'
+abbr --add ct 'ctest --test-dir build --rerun-failed --output-on-failure'
 abbr --add zb 'zig build'
 abbr --add zt 'zig build test --summary all'
 abbr --add zd "zig build debug"
