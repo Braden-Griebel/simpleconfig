@@ -66,10 +66,6 @@ function fish_title
     true
 end
 
-# Setup gurobi 
-set -x GUROBI_HOME /opt/gurobi1203/linux64
-set -x LD_LIBRARY_PATH "$LD_LIBRARY_PATH:$GUROBI_HOME/lib"
-
 # Set some preferences 
 set -x EDITOR nvim
 set -x PAGER less
@@ -86,6 +82,9 @@ abbr --add zd "zig build debug"
 abbr --add vv 'source ./.venv/bin/activate.fish'
 abbr --add em 'emacs -nw'
 abbr --add hx helix
+abbr --add ls eza
+abbr --add lt 'eza -T'
+abbr --add la 'eza -la'
 
 # Zoxide Setup (Kepp at end)
 zoxide init --cmd cd fish | source
