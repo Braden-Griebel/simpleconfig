@@ -82,9 +82,9 @@ abbr --add zd "zig build debug"
 abbr --add vv 'source ./.venv/bin/activate.fish'
 abbr --add em 'emacs -nw'
 abbr --add hx helix
-abbr --add ls eza
-abbr --add lt 'eza -T'
-abbr --add la 'eza -la'
+abbr --add ls 'eza --group-directories-first --icons=auto'
+abbr --add lt 'eza -T --icons=always --group-directories-first'
+abbr --add la 'eza -la --group-directories-first --icons=always'
 
 # Zoxide Setup (Kepp at end)
 zoxide init --cmd cd fish | source
